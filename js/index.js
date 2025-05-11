@@ -148,7 +148,7 @@ function displayMeals(meals) {
 async function showMealDetails(mealId) {
     showLoading();
     try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
+        const response = await fetchWithLoading(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
         const data = await response.json();
         if(data.meals) {
             displayMealDetails(data.meals[0]);
