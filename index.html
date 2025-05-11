@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+    <meta name="keywords" content="Healthy Recipes, Easy Cooking Ideas, Delicious Meal Ideas, Quick Recipes, Traditional Dishes, Food Lovers, Tasty Cooking">
+    <meta name="description" content="A website featuring healthy and easy-to-make recipes with delicious and quick meal ideas for all food lovers.">
+    <meta name="author" content="Kareem Mohamed : Wa-+201143176683 : https://github.com/Kareemmohameed ">
+    <meta name="robots" content="noindex, nofollow">
+    <title>FoodieZone</title>
+    <!-- ? css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ! icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="overflow: visible;">
+<div class="d-flex position-fixed top-0 start-0 vh-100 z-1">
+  <!-- Slid Bar-->
+  <div class="side-nav-menu d-flex flex-column justify-content-between p-4 bg-black vh-100" style="width: 250px;">
+    <div class="nav-links my-2">
+      <ul class="list-unstyled">
+        <li class="mb-2"><a href="#" class="text-white text-decoration-none" id="searchContainer">Search</a></li>
+        <li class="mb-2"><a href="#" class="text-white text-decoration-none" id="Categories">Categories</a></li>
+        <li class="mb-2"><a href="#" class="text-white text-decoration-none" id="Area">Area</a></li>
+        <li class="mb-2"><a href="#" class="text-white text-decoration-none" id="Ingredients">Ingredients</a></li>
+        <li><a href="" class="text-white text-decoration-none" id="Contact-Us">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="icon text-white">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-solid fa-globe my-2"></i>
+      <div class="nav-footer">
+        <p class="small">Copyright © 2019 All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider-->
+  <div class="nav-header d-flex flex-column justify-content-between align-items-center py-4 px-2 bg-body-tertiary text-black" style="width: 60px;">
+    <img class="logo mb-3" src="imgs/logo.png" alt="" width="50">
+    <i class="fa-solid open-close-icon fa-sliders fs-2 mb-3" style="cursor: pointer"></i>
+    <div>
+      <i class="fa-solid fa-globe d-block mb-2"></i>
+      <i class="fa-solid fa-share-nodes"></i>
+    </div>
+  </div>
+</div>
+<!-- inputs Search  -->
+    <div class="container w-50 d-none" id="search-Container">
+    <div class="row py-4 ">
+        <div class="col-md-6 ">
+            <input class="form-control bg-transparent text-white" type="text" placeholder="Search By Name" id="searchName">
+        </div>
+        <div class="col-md-6">
+            <input  maxlength="1" class="form-control bg-transparent text-white" type="text" placeholder="Search By First Letter" id="searchFirstLetter">
+        </div>
+    </div></div>
+<div class="container">
+  <div class="row py-5 g-4" id="rowData">
+  </div>
+</div>
+<!-- Render -->
+<div id="loading-screen" class="loading-screen">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+</div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
