@@ -15,8 +15,8 @@ async function fetchWithLoading(url) {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error("Error:", error);
-        return null;
+        console.error("Error fetching meal details:", error);
+        rowData.innerHTML = '<div class="col-12 text-center py-4 text-danger">Error loading Data</div>';
     } finally {
         hideLoading();
     }
@@ -120,25 +120,10 @@ function displayMeals(meals) {
     meals.forEach(meal => {
         html += `
         <div class="col-md-3">
-            <div class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
-                <img src="${meal.strMealThumb}" class="w-100" alt="${meal.strMeal}">
-                <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
-                    <h3 class="text-center w-100">${meal.strMeal}</h3>
-                </div>
-            </div>
-        </div>`;
-    });
-    rowData.innerHTML = html;
-}
-function displayMeals(meals) {
-    let html = '';
-    meals.forEach(meal => {
-        html += `
-        <div class="col-md-3">
             <div onclick="showMealDetails('${meal.idMeal}')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
                 <img src="${meal.strMealThumb}" class="w-100" alt="${meal.strMeal}">
                 <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
-                    <h3 class="text-center w-100">${meal.strMeal}</h3>
+                    <h3 class="w-100">${meal.strMeal}</h3>
                 </div>
             </div>
         </div>`;
@@ -148,7 +133,7 @@ function displayMeals(meals) {
 async function showMealDetails(mealId) {
     showLoading();
     try {
-        const response = await fetchWithLoading(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
+        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
         const data = await response.json();
         if(data.meals) {
             displayMealDetails(data.meals[0]);
